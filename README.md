@@ -13,5 +13,8 @@ and then taking short breaks of 5 minuates. After 4 cycles of 25 min each, a 20 
 1. Install Python 3.7 or any later version 
 2. Download the main.py file located on this repository under the main branch or clone it to your local machine
 3. Import the TKinter GUI library at the beginning of the file 
-4. Run the python file using the "python3 main.py" command
+4. Run the python file using the "python3 main.py" command and the screen below would be displayed:
 
+
+
+<img width="545" alt="pomodoro_screenshot" src="https://user-images.githubusercontent.com/54595401/194216172-ab20596c-2767-4807-b83e-c636ca59cf39.png">
