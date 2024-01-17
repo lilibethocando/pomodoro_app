@@ -1,5 +1,8 @@
 from tkinter import *
 import math
+import time
+import os
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -34,11 +37,21 @@ def start_timer():
     long_break_sec = LONG_BREAK_MIN * 60
 
     if reps % 8 == 0:
+        os.system("'/usr/bin/osascript' -e 'tell app \"Finder\" to activate'")
+        window.lift()
+        window.attributes('-topmost', True)
+        flash_window()
         count_down(long_break_sec)
         title_label.config(text="Break", fg=RED)
+
     elif reps % 2 == 0:
+        os.system("'/usr/bin/osascript' -e 'tell app \"Finder\" to activate'")
+        window.lift()
+        window.attributes('-topmost', True)
+        flash_window()
         count_down(short_break_sec)
         title_label.config(text="Break", fg=PINK)
+        
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=GREEN)
@@ -90,9 +103,16 @@ check_marks = Label(fg=GREEN, bg=YELLOW)
 check_marks.grid(column=1, row=3)
 
 
-
-
-
+#------------------------------------------
+def flash_window():
+    original_color = window.cget("bg")
+    for _ in range(5):  # Flash 5 times
+        window.configure(bg="red")
+        window.update()
+        time.sleep(0.2)
+        window.configure(bg=original_color)
+        window.update()
+        time.sleep(0.2)
 
 window.mainloop()
 
